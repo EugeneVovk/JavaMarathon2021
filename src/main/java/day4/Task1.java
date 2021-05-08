@@ -4,6 +4,17 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * С клавиатуры вводится число n - размер массива.
+ * Необходимо создать массив указанного размера и заполнить его случайными числами от 0 до 10.
+ * Затем вывести содержимое массива в консоль, а также вывести в консоль информацию о:
+ * а) Длине массива
+ * б) Количестве чисел больше 8
+ * в) Количестве чисел равных 1
+ * г) Количестве четных чисел
+ * д) Количестве нечетных чисел
+ * е) Сумме всех элементов массива
+ */
 public class Task1 {
     public static void main(String[] args) {
 
@@ -28,10 +39,8 @@ public class Task1 {
             else
                 oddNumbers++;
             sumOfAll += arr[i];
-//            System.out.println(i + " - " + rand.nextInt(10) + " ");
-//            System.out.print(arr[i] + " ");
         }
-//        System.out.println();
+
         System.out.println(Arrays.toString(arr));
         System.out.println("Длина массива: " + n);
         System.out.println("Количество чисел больше 8: " + greaterThan8);
