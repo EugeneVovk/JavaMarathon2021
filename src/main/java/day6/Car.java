@@ -7,10 +7,7 @@ public class Car {
     private String model;
 
     public void setYear(int year) {
-        if (year < 2015 || year > 2021)
-            System.out.println("Введён некорректный год выпуска!");
-        else
-            this.year = year;
+        this.year = year;
     }
 
     public void setColor(String color) {
@@ -18,10 +15,7 @@ public class Car {
     }
 
     public void setModel(String model) {
-        if (model.isEmpty())
-            System.out.println("Введено пустое значение в поле model!");
-        else
-            this.model = model;
+        this.model = model;
     }
 
     public void info() {

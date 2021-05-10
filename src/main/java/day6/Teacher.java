@@ -3,7 +3,6 @@ package day6;
 import java.util.Random;
 
 public class Teacher {
-
     private String name;
     private String subject;
 
@@ -12,22 +11,22 @@ public class Teacher {
         this.subject = subject;
     }
 
-    public String getName() {
-        return name;
-    }
+//    public void evaluate(String name) {
+//        //  нагуглил такой кусочек кода, для выставления значения от 2-5, http://java-online.ru/java-random.xhtml
+//        int min = 2;
+//        int max = 5;
+//        int diff = max - min;
+//        Random random = new Random();
+//        int intPoint = random.nextInt(diff + 1);
+//        intPoint += min;
 
-    public String getSubject() {
-        return subject;
-    }
-
-    public void evaluate(String name) {
-        //  нагуглил такой кусочек кода, для выставления значения от 2-5
-        int min = 2;
-        int max = 5;
-        int diff = max - min;
+    //  в Java мы можем в качестве аргументов указывать наши собственные классы
+    //  ...при вызове этого метода в качестве аргумента ему ннужно передать объект класса Student
+    public void evaluate(Student student) {
         Random random = new Random();
-        int intPoint = random.nextInt(diff + 1);
-        intPoint += min;
+        // Этот метод генерирует числа от нуля до указанного значения (не включая его)
+        // ...следовательно, мы указывает 4 и к этому числу просто прибавляем 2, чтобы получить диапазон от 2 до 5
+        int intPoint = random.nextInt(4) + 2;
 
         String strPoint = null;
 
@@ -45,10 +44,10 @@ public class Teacher {
                 strPoint = "неудовлетворительно";
         }
 
-        System.out.println("\nПреподаватель " + getName()
+        System.out.println("\nПреподаватель " + this.name
                 + " оценила студента с именем "
-                + name + " по предмету "
-                + getSubject() + " на оценку "
+                + student.getName() + " по предмету "
+                + this.subject + " на оценку "
                 + strPoint + ".");
     }
 }

@@ -20,7 +20,6 @@ public class Task3 {
 
         Student student = new Student("Вовочка");
 
-        teacher.evaluate(student.getName());
-
+        teacher.evaluate(student);
     }
 }
