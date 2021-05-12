@@ -16,19 +16,23 @@ public class Task1 {
 
 //        замеряем toString
         long before = System.currentTimeMillis();
-        String str1 = "";
-        for (int i = 0; i < 20000; i++) {
+        String str1 = "";  //  вначале создаём пустую строку
+        for (int i = 0; i <= 20000; i++)
             str1 += i + " ";
-        }
+        //  и здесь предупреждение, что конкатенация строк внутри цикла:
+        //  "String concatenation '+=' in loop"
+        //  это плохо, потому что класс String не предназначен для множественного изменения строк
+        //  класс String, он не изменяемый, всегда создаётся новая строка и вновь помещается в переменную str1
         System.out.println(str1);
         long after = System.currentTimeMillis();
 
 //        замеряем StringBuilder
         long beforeSB = System.currentTimeMillis();
-        StringBuilder str2 = new StringBuilder();
-        for (int i = 0; i < 20000; i++) {
+        StringBuilder str2 = new StringBuilder();  // создаём SB спустой строкой
+        for (int i = 0; i <= 20000; i++)
             str2.append(i).append(" ");
-        }
+        //  StringBuilder - это изменяемый класс,
+        //  здесь не будет создаваться новая строка, будет изменяться текущая строка
         System.out.println(str2);
         long afterSB = System.currentTimeMillis();
 

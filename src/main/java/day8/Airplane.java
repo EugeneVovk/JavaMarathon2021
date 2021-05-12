@@ -53,5 +53,10 @@ public class Airplane {
         str.append(", количество топлива в баке: ");
         str.append(fuel);
         return str.toString();
+        /**
+         *  Тут выдаётся предупреждение: 'StringBuilder str' can be replaced with 'String'
+         *  Мы можем сгенерировать toString и перенаправить его спомощью среды разработки - ALT+Insert
+         *  далее немного изменить, чтобы соответствовало методу info()
+         */
     }
 }
